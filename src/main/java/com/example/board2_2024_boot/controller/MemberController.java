@@ -1,7 +1,11 @@
 package com.example.board2_2024_boot.controller;
 
+import com.example.board2_2024_boot.dto.MemberDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MemberController {
@@ -10,4 +14,12 @@ public class MemberController {
     public String saveForm() {
         return "save";
     }
+
+    @PostMapping("/member/save")
+    public String save(@ModelAttribute MemberDTO memberDTO){
+        System.out.println("MemberController.save");
+        System.out.println("memberDTO = " + memberDTO);
+        return "index";
+    }
+
 }
