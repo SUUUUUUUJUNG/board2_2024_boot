@@ -1,5 +1,6 @@
 package com.example.board2_2024_boot.entity;
 
+import com.example.board2_2024_boot.dto.MemberDTO;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -23,5 +24,13 @@ public class MemberEntity {
 
     @Column
     private String memberName;
+
+    public static MemberEntity toMemberEntity(MemberDTO memberDTO){
+        MemberEntity memberEntity = new MemberEntity();
+        memberEntity.setMemberEmail(memberDTO.getMemberEmail());
+        memberEntity.setMemberPassword(memberDTO.getMemberPassword());
+        memberEntity.setMemberName(memberDTO.getMemberName());
+        return memberEntity;
+    }
 
 }
