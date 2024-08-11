@@ -24,6 +24,6 @@ public class MemberController{
             System.out.println("MemberController.save");
             System.out.println("memberDTO = " + memberDTO);
             memberService.save(memberDTO);
-            return "index";
+            return "login";
         }
 }
