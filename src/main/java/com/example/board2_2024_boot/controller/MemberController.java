@@ -69,4 +69,11 @@ public class MemberController{
         return "update";
     }
 
+    @PostMapping("/member/update")
+    public String update(@ModelAttribute MemberDTO memberDTO){
+        System.out.println("컨트롤러진입");
+        memberService.update(memberDTO);
+        return "redirect:/member/" + memberDTO.getId();
+    }
+
 }
